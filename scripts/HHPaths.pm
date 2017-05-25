@@ -38,18 +38,18 @@ push @EXPORT, qw($hhshare $hhbdata);
 #our $execdir = ".../psipred/bin";         # path to PSIPRED V2 binaries
 #our $datadir = ".../psipred/data";        # path to PSIPRED V2 data files
 #our $ncbidir = ".../blast/bin";           # path to NCBI binaries (for PSIPRED in addss.pl)
-our $execdir = "/cluster/toolkit/production/bioprogs/psipred/bin";  # path to PSIPRED V2 binaries
-our $datadir = "/cluster/toolkit/production/bioprogs/psipred/data"; # path to PSIPRED V2 data files
-our $ncbidir = "/cluster/toolkit/production/bioprogs/blast/bin";    # path to NCBI binaries (for PSIPRED in addss.pl)
+our $execdir = "/home/ubuntu/identify_CRISPR/bin";  # path to PSIPRED V2 binaries
+our $datadir = "/home/ubuntu/identify_CRISPR/data"; # path to PSIPRED V2 data files
+our $ncbidir = "/home/hanb/bin";    # path to NCBI binaries (for PSIPRED in addss.pl)
 
 ##############################################################################################
 # PLEASE COMPLETE THE PATHS ... TO YOUR LOCAL PDB FILES, DSSP FILES ETC.
 #our $pdbdir  =  ".../pdb/all";            # where are the pdb files? (pdb/divided directory will also work)
 #our $dsspdir =  ".../dssp/data";          # where are the dssp files? Used in addss.pl.
 #our $dssp    =  ".../dssp/bin/dsspcmbi";  # where is the dssp binary? Used in addss.pl.
-our $pdbdir  =  "/cluster/databases/pdb/all";            # where are the pdb files? (pdb/divided directory will also work)
-our $dsspdir =  "/cluster/databases/dssp/data";          # where are the dssp files? Used in addss.pl
-our $dssp    =  "/cluster/databases/dssp/bin/dsspcmbi";  # where is the dssp binary? Used in addss.pl
+our $pdbdir  =  "";            # where are the pdb files? (pdb/divided directory will also work)
+our $dsspdir =  "";          # where are the dssp files? Used in addss.pl
+our $dssp    =  "";  # where is the dssp binary? Used in addss.pl
 ##############################################################################################
 
 # The lines below probably do not need to be changed

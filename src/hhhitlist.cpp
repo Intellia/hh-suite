@@ -58,8 +58,8 @@ void HitList::PrintHitList(HMM* q, std::stringstream& out,
   out << " No Hit                             Prob  E-value  P-value  Score    SS Cols Query HMM  Template HMM" << std::endl;
 #else
   out
-      << " No\tHit\tProb\tE-value\tP-value\tScore\tSS\tCols\tQueryHMM\tTemplateHMM"
-      << std::endl;
+      << "No\tHit\tProb\tE-value\tP-value\tScore\tSS\tCols\tQueryHMM\tTemplateHMM\n";
+//      << std::endl;
 #endif
 
   char line[LINELEN];
@@ -100,8 +100,8 @@ void HitList::PrintHitList(HMM* q, std::stringstream& out,
 #endif
 
     // Needed for long sequences (more than 5 digits in length)
-    sprintf(str, "%6.1f\t", hit.score);
-    sprintf(line, "%s\t%1f\t%i\t%4i-%-4i\t%4i-%-4i(%i)\n", str, hit.score_ss,
+    sprintf(str, "%.1f\t", hit.score);
+    sprintf(line, "%s\t%.1f\t%i\t%4i-%-4i\t%4i-%-4i(%i)\n", str, hit.score_ss,
         hit.matched_cols, hit.i1, hit.i2, hit.j1, hit.j2, hit.L);
     out << line;
   }

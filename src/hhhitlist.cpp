@@ -58,7 +58,7 @@ void HitList::PrintHitList(HMM* q, std::stringstream& out,
   out << " No Hit                             Prob  E-value  P-value  Score    SS Cols Query HMM  Template HMM" << std::endl;
 #else
   out
-      << " No Hit                             Prob E-value P-value  Score    SS Cols Query HMM  Template HMM"
+      << " No\tHit\tProb\tE-value\tP-value\tScore\tSS\tCols\tQueryHMM\tTemplateHMM"
       << std::endl;
 #endif
 
@@ -77,7 +77,7 @@ void HitList::PrintHitList(HMM* q, std::stringstream& out,
     char Estr[10];
     char Pstr[10];
     char str[NAMELEN];
-    sprintf(str, "%3i %-30.30s    ", nhits, hit.longname);
+    sprintf(str, "%3i\t%s\t", nhits, hit.longname);
 
 #ifdef WINDOWS
     if (hit.Eval>=1E-99) sprintf(Estr,"%8.2G",hit.Eval);
@@ -88,20 +88,20 @@ void HitList::PrintHitList(HMM* q, std::stringstream& out,
     out << line;
 #else
     if (hit.Eval >= 1E-99)
-      sprintf(Estr, "%7.2G", hit.Eval);
+      sprintf(Estr, "%7.2G\t", hit.Eval);
     else
-      sprintf(Estr, "%7.0E", hit.Eval);
+      sprintf(Estr, "%7.0E\t", hit.Eval);
     if (hit.Pval >= 1E-99)
-      sprintf(Pstr, "%7.2G", hit.Pval);
+      sprintf(Pstr, "%7.2G\t", hit.Pval);
     else
-      sprintf(Pstr, "%7.0E", hit.Pval);
-    sprintf(line, "%-34.34s %5.1f %7s %7s ", str, hit.Probab, Estr, Pstr);
+      sprintf(Pstr, "%7.0E\t", hit.Pval);
+    sprintf(line, "%-34.34s\t%5.1f\t%7s\t%7s\t", str, hit.Probab, Estr, Pstr);
     out << line;
 #endif
 
     // Needed for long sequences (more than 5 digits in length)
-    sprintf(str, "%6.1f", hit.score);
-    sprintf(line, "%-6.6s %5.1f %4i %4i-%-4i %4i-%-4i(%i)\n", str, hit.score_ss,
+    sprintf(str, "%6.1f\t", hit.score);
+    sprintf(line, "%-6.6s\t%5.1f\t%4i\t%4i-%-4i\t%4i-%-4i(%i)\n", str, hit.score_ss,
         hit.matched_cols, hit.i1, hit.i2, hit.j1, hit.j2, hit.L);
     out << line;
   }

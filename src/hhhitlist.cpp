@@ -95,7 +95,7 @@ void HitList::PrintHitList(HMM* q, std::stringstream& out,
 //      sprintf(Pstr, "%.2G\t", hit.Pval);
 //    else
 //      sprintf(Pstr, "%.0E\t", hit.Pval);
-    sprintf(line, "%s\t%.1f\t%f\t%f\t", str, hit.Probab, hit.Eval, hit.Pval);
+    sprintf(line, "%s\t%.3f\t%.1f\t%.1f\t", str, hit.Probab, hit.Eval, hit.Pval);
     out << line;
 #endif
 

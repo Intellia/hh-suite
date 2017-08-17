@@ -31,22 +31,22 @@ void HitList::PrintHitList(HMM* q, std::stringstream& out,
     const double E, const int argc, char** argv) {
   int nhits = 0;
 
-  out << "Query         " << q->longname << std::endl;
-  out << "Match_columns " << q->L << std::endl;
-  out << "No_of_seqs    " << q->N_filtered << " out of " << q->N_in
+  out << "Query\t" << q->longname << std::endl;
+  out << "Match_columns\t" << q->L << std::endl;
+  out << "No_of_seqs\t" << q->N_filtered << "\tout of\t" << q->N_in
       << std::endl;
-  out << "Neff          " << q->Neff_HMM << std::endl;
-  out << "Searched_HMMs " << N_searched << std::endl;
+  out << "Neff\t" << q->Neff_HMM << std::endl;
+  out << "Searched_HMMs\t" << N_searched << std::endl;
 
   // Print date stamp
   time_t* tp = new time_t;
   *tp = time(NULL);
 
-  out << "Date          " << ctime(tp);
+  out << "Date\t" << ctime(tp);
   delete (tp);
 
   // Print command line
-  out << "Command       ";
+  out << "Command\t";
   for (int i = 0; i < argc; i++)
     if (strlen(argv[i]) <= maxdbstrlen)
       out << argv[i] << " ";

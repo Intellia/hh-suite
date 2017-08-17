@@ -87,15 +87,15 @@ void HitList::PrintHitList(HMM* q, std::stringstream& out,
     sprintf(line,"%-34.34s %5.1f %8s %8s ",str,hit.Probab,Estr,Pstr);
     out << line;
 #else
-    if (hit.Eval >= 1E-99)
-      sprintf(Estr, "%.2G\t", hit.Eval);
-    else
-      sprintf(Estr, "%.0E\t", hit.Eval);
-    if (hit.Pval >= 1E-99)
-      sprintf(Pstr, "%.2G\t", hit.Pval);
-    else
-      sprintf(Pstr, "%.0E\t", hit.Pval);
-    sprintf(line, "%s\t%.1f\t%s\t%s\t", str, hit.Probab, Estr, Pstr);
+//    if (hit.Eval >= 1E-99)
+//      sprintf(Estr, "%.2G\t", hit.Eval);
+//    else
+//      sprintf(Estr, "%.0E\t", hit.Eval);
+//    if (hit.Pval >= 1E-99)
+//      sprintf(Pstr, "%.2G\t", hit.Pval);
+//    else
+//      sprintf(Pstr, "%.0E\t", hit.Pval);
+    sprintf(line, "%s\t%.1f\t%f\t%f\t", str, hit.Probab, hit.Eval, hit.Pval);
     out << line;
 #endif
 
